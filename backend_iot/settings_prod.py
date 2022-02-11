@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -14,7 +15,7 @@ SECRET_KEY = 'django-insecure-j7(e6v%h2wq7#!9tef2c7h3qk(%-p417b))b#l@bes5*=%m*al
 DEBUG = False
 
 ALLOWED_HOSTS = ['backend-iot-env.eba-prhv4rz9.sa-east-1.elasticbeanstalk.com']
-
+log_file_path = os.getenv('LOG_FILE_PATH', 'local.log')
 
 # Application definition
 
