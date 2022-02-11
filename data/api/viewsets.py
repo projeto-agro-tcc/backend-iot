@@ -1,3 +1,4 @@
+from pymongo import MongoClient
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -13,6 +14,10 @@ class DataViewSet(ModelViewSet):
         # db_handle, mongo_client = get_db_handle()
         # collection = get_collection_handle(db_handle, RECEIVED_DATADB)
         # collection.insert_one(request.data)
+        client = MongoClient("mongodb://root:ort4344svfa0098ii9o@localhost:27017")
+        db_handle = client["iot_monitoramento"]
+        collection = db_handle['received_data']
+        collection.insert_one(request.data)
         return Response(status=status.HTTP_201_CREATED)
 
 
