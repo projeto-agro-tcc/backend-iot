@@ -4,19 +4,15 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from utils.MongoDatabase import get_db_handle, get_collection_handle
-from backend_iot.settings import RECEIVED_DATADB
+from backend_iot.settings_prod import RECEIVED_DATADB
 
 
 class DataViewSet(ModelViewSet):
 
     @action(detail=False, methods=['POST'])
     def data(self, request, *args, **kwargs):
-        # db_handle, mongo_client = get_db_handle()
-        # collection = get_collection_handle(db_handle, RECEIVED_DATADB)
-        # collection.insert_one(request.data)
-        client = MongoClient('mongodb://root:ort4344svfa0098ii9o@localhost:27017')
-        db_handle = client['iot_monitoramento']
-        collection = db_handle['received_data']
+        db_handle, mongo_client = get_db_handle()
+        collection = get_collection_handle(db_handle, RECEIVED_DATADB)
         collection.insert_one(request.data)
         return Response(status=status.HTTP_201_CREATED)
 
