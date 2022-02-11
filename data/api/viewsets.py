@@ -10,9 +10,9 @@ class DataViewSet(ModelViewSet):
 
     @action(detail=False, methods=['POST'])
     def data(self, request, *args, **kwargs):
-        db_handle, mongo_client = get_db_handle()
-        collection = get_collection_handle(db_handle, RECEIVED_DATADB)
-        collection.insert_one(request.data)
+        # db_handle, mongo_client = get_db_handle()
+        # collection = get_collection_handle(db_handle, RECEIVED_DATADB)
+        # collection.insert_one(request.data)
         return Response(status=status.HTTP_201_CREATED)
 
 
