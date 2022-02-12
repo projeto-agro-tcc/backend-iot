@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from backend_iot.settings_prod import URI_MONGO, DB_NAME
+from backend_iot.enviroments import URI_MONGO, DB_NAME
 
 
 def get_db_handle():

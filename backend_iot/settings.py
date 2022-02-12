@@ -61,9 +61,7 @@ WSGI_APPLICATION = 'backend_iot.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-URI_MONGO = "mongodb://admin:123456@127.0.0.1:27017"
-DB_NAME = 'iot_monitoramento'
-RECEIVED_DATADB = 'received_data'
+
 
 DATABASES = {
     'default': {
@@ -114,3 +112,7 @@ STATIC_ROOT = 'static'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'utils.exception_handler.custom_exception_handler',
+}

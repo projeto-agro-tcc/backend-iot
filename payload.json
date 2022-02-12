@@ -4,6 +4,7 @@
         {"time": 1643723563434775, "unit": 2224179556, "value": 301.39, "dev_id": "f803320100027b40", "ref": "temp_temperature"}, 
         {"time": 1643723563352591, "unit": 1310720, "value": 10.0, "dev_id": "f803320100027b40", "ref": "snr_snr"}, 
         {"time": 1643723563282390, "unit": 1310720, "value": -62.0, "dev_id": "f803320100027b40", "ref": "rssi_dbm"}, 
+
         {"time": 1643723563206146, "unit": 0, "value": "SF10BW125", "dev_id": "f803320100027b40", "ref": "date_string"}, 
         {"time": 1643723563093106, "unit": 0, "value": "ABP", "dev_id": "f803320100027b40", "ref": "activation_mode_string"}, 
         

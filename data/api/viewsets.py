@@ -1,10 +1,9 @@
-from pymongo import MongoClient
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from utils.MongoDatabase import get_db_handle, get_collection_handle
-from backend_iot.settings_prod import RECEIVED_DATADB
+from backend_iot.enviroments import RECEIVED_DATADB
 
 
 class DataViewSet(ModelViewSet):
@@ -34,4 +33,3 @@ class DataViewSet(ModelViewSet):
             "message": 'It is working'
         }
         return Response(status=status.HTTP_200_OK)
-

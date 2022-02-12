@@ -1,4 +1,4 @@
-from backend_iot.settings import RECEIVED_DATADB
+from backend_iot.enviroments import RECEIVED_DATADB
 from utils.MongoDatabase import get_collection_handle, get_db_handle
 
 
@@ -12,9 +12,9 @@ class CatchDataFromReceivedData:
             for doc in documents:
                 for data in doc['data']:
                     collection_data = get_collection_handle(db_handle, data['ref'])
-                    self.save_data(collection_data, data)
+                    if len(self.it_exist(collection_data, data)) == 0:
+                        self.save_data(collection_data, data)
                 collection.delete_one(doc)
-                print("Objetos salvos")
         else:
             print("No data")
 
@@ -26,3 +26,9 @@ class CatchDataFromReceivedData:
             'dev_id': data['dev_id']
         }
         collection.insert_one(obj)
+
+    def it_exist(self, collection, data):
+        obj = data.copy()
+        obj.pop('ref')
+        list_obj = list(collection.find(obj).limit(1))
+        return list_obj
