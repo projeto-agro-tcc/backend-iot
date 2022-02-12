@@ -25,7 +25,7 @@ class DataViewSet(ModelViewSet):
     def connection_status(self, request, *arg, **kwargs):
         response = {
             "seq": request.data['seq'],
-            "status": 201,
+            "status": 200,
             "message": 'It is working'
         }
         return Response(response)
