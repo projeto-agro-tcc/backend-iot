@@ -64,18 +64,18 @@ WSGI_APPLICATION = 'backend_iot.wsgi.application'
 
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'backend_iot',
-        'USER': 'root',
-        'PASSWORD': '2021monitoramento',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'backend_iot',
+    #     'USER': 'root',
+    #     'PASSWORD': '2021monitoramento',
+    #     'HOST': 'localhost',
+    #     'PORT': '',
+    # }
 }
 
 

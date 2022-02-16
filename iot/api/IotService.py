@@ -7,7 +7,7 @@ class IotService:
     def __init__(self):
         pass
 
-    def getDataByParams(time_to_start, time_to_end, dev_id, colection):
+    def getDataByParams(self, time_to_start, time_to_end, dev_id, colection):
         db_handle, mongo_client = get_db_handle()
         collection = get_collection_handle(db_handle, colection)
         serialized_obj = dumps(list(collection.find({'dev_id': dev_id,
