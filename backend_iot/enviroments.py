@@ -25,7 +25,7 @@ database = {
     'USER': 'root',
     'PASSWORD': '2021monitoramento',
     'HOST': 'localhost',
-    'PORT': '3306',
+    'PORT': '',
 }
 
 
