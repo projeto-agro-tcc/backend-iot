@@ -65,7 +65,9 @@ WSGI_APPLICATION = 'backend_iot.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 
-DATABASES = enviroments.database
+DATABASES = {
+    'default': enviroments.database
+}
 
 
 # Password validation
