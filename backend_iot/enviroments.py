@@ -1,3 +1,5 @@
+from backend_iot.settings import BASE_DIR
+
 URI_MONGO = "mongodb://admin:123456@127.0.0.1:27017"
 #URI_MONGO = 'mongodb://root:ort4344svfa0098ii9o@localhost:27017'
 DB_NAME = 'iot_monitoramento'
@@ -15,3 +17,19 @@ COLLECTIONS_EMW = {
     "lum" : "emw_luminosity_lux",
     "uv" : "emw_uv_dimensionless"
 }
+
+#database aws
+database = {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'backend_iot',
+    'USER': 'root',
+    'PASSWORD': '2021monitoramento',
+    'HOST': 'localhost',
+    'PORT': '',
+}
+
+#database localhost
+# database = {
+#     'ENGINE': 'django.db.backends.sqlite3',
+#     'NAME': BASE_DIR / 'db.sqlite3',
+# }
