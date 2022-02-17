@@ -2,6 +2,7 @@ from utils.MongoDatabase import get_db_handle, get_collection_handle
 
 from bson.json_util import dumps
 
+
 class IotService:
 
     def __init__(self):
